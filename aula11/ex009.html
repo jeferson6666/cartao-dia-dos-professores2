@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            color: #05db82;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="button"] {
+            padding: 10px 15px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #4cae4c;
+        }
+        #res {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sistema de Pessoas</h1>
+    <input type="text" name="txtpais" id="txtpais" placeholder="Digite seu país">
+   <input type="button" value="verificar" onclick="verificar()">
+   <div id="res">
+
+   </div>
+   <script>
+       function verificar() {
+           var pais = document.getElementById('txtpais').value;
+           var res = document.getElementById('res');
+           res.innerHTML = `Vivendo em ${pais}`;
+           if (pais != 'Brasil') {
+               res.innerHTML += `<p>Você é estrangeiro</p>`;
+           } else {
+               res.innerHTML += `<p>Você é <strong>BRASILEIRO</strong</p>`;
+           }
+       }
+   </script>
+
+</body>
+</html>

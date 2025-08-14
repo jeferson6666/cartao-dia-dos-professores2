@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+header, footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+.tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 0;
+    border: 4px solid #333;
+    background: #333;
+}
+.casa {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.casa.branca {
+    background: #f0d9b5;
+}
+.casa.preta {
+    background: #b58863;
+}
+.casa.selecionada {
+    outline: 3px solid #2196f3;
+    z-index: 2;
+}
+.peca {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border: 3px solid #fff;
+}
+.peca.vermelha {
+    background: #e53935;
+    color: #fff;
+}
+.peca.preta {
+    background: #222;
+    color: #fff;
+}
+.peca.dama {
+    border: 3px solid gold;
+    font-weight: bold;
+    font-size: 2em;
+}
+.mensagem {
+    margin: 1em 0;
+    font-size: 1.2em;
+    color: #2196f3;
+    min-height: 2em;
+}
+button {
+    padding: 0.5em 1.5em;
+    font-size: 1em;
+    border-radius: 6px;
+    border: none;
+    background: #2196f3;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #1769aa;
+}

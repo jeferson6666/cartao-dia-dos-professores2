@@ -1,0 +1,133 @@
+body {
+    background: repeating-linear-gradient(135deg, #e7d3b0 0 40px, #c2a477 40px 80px);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.fundo-animado {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(120deg, #fffbe7 0 2px, transparent 2px 40px);
+    opacity: 0.15;
+    animation: fundoBrilho 8s linear infinite;
+}
+@keyframes fundoBrilho {
+    0% { background-position: 0 0; }
+    100% { background-position: 200px 200px; }
+}
+@keyframes brilho {
+    0%,100% { filter: brightness(1.1); }
+    50% { filter: brightness(1.5) drop-shadow(0 0 12px #ff9800); }
+}
+.cartao {
+    background: #f5ecd7;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(120, 90, 40, 0.18);
+    padding: 2.5em 2em 2em 2em;
+    max-width: 480px;
+    min-height: 540px;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    animation: cartaoPop 1s cubic-bezier(.68,-0.55,.27,1.55);
+    border: 5px solid #a67c52;
+    z-index: 1;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+@keyframes cartaoPop {
+    0% { transform: scale(0.7) rotate(-8deg); opacity: 0; }
+    80% { transform: scale(1.05) rotate(2deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0); }
+}
+.cartao h1 {
+    color: #a67c52;
+    margin-bottom: 1em;
+    text-shadow: 1px 1px 0 #fff, 2px 2px 0 #e7d3b0;
+    font-size: 2.1em;
+    letter-spacing: 1.5px;
+    animation: brilho 2.5s infinite;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+.poema {
+    font-size: 1.18em;
+    color: #5a4321;
+    min-height: 180px;
+    max-height: 320px;
+    margin-bottom: 1.5em;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    letter-spacing: 0.5px;
+    line-height: 1.7;
+    text-align: left;
+    background: #f3e5c0;
+    border-radius: 12px;
+    padding: 1.2em 1.4em;
+    box-shadow: 0 2px 12px rgba(120, 90, 40, 0.10);
+    border-left: 8px solid #a67c52;
+    border-right: 8px solid #a67c52;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.poema div {
+    position: relative;
+    padding-left: 0.5em;
+    margin-bottom: 0.2em;
+    font-size: 1.1em;
+    animation: brilho 2.5s infinite;
+}
+.poema div.emoji {
+    font-size: 1.5em;
+    display: inline-block;
+    margin-right: 0.3em;
+    animation: brilho 2.5s infinite;
+}
+/* Brilhos animados */
+.brilho {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, #fffbe7 40%, #ff9800 80%, transparent 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.7;
+    animation: brilhoMove 2.5s infinite linear;
+}
+@keyframes brilhoMove {
+    0% { left: 10%; top: 10%; opacity: 0.7; }
+    50% { left: 80%; top: 80%; opacity: 1; }
+    100% { left: 10%; top: 10%; opacity: 0.7; }
+}
+button {
+    background: #a67c52;
+    color: #fffbe7;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7em 2em;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(120, 90, 40, 0.12);
+    transition: background 0.2s, transform 0.2s;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+button:hover {
+    background: #7c5a36;
+    color: #f3e5c0;
+    transform: scale(1.07);
+}
+.decoracao {
+    position: absolute;
+    top: 0.7em;
+    right: 1.2em;
+    left: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2em;
+    pointer-events: none;
+    opacity: 0.8;
+}
